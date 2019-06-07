@@ -20,13 +20,9 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&lang=hu&appid=${API_KEY}&units=metric`,
-      {
-        mode: 'no-cors'
-      },
-    );
+      `https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&lang=hu&appid=${API_KEY}&units=metric`);
     const data = await api_call.json();
-    console.log(data);
+   
 
     if (city && country) {
       this.setState({

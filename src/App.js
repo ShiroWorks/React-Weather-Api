@@ -23,7 +23,7 @@ class App extends React.Component {
       `https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&lang=hu&appid=${API_KEY}&units=metric`,
       {
         mode: 'no-cors'
-      }
+      },
     );
     const data = await api_call.json();
     console.log(data);

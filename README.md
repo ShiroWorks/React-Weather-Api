@@ -1,0 +1,5 @@
+# Weather-Api
+Find out the weather in any country/city.
+<p>This application is using the <a href="https://openweathermap.org/api">weather api</a>.</p> 
+<p> If you want to test this locally run <code>npm nstall</code> then <code>npm start</code> and register for an API key on the <a href="https://openweathermap.org/api">weather api</a> website.</p>
+<p>Create a <code>.env.development</code> file and paste this in: <code>REACT_APP_API_WHEATHER=paste your api key here</code>.</p>

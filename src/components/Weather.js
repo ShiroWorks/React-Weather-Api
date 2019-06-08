@@ -26,6 +26,13 @@ const Weather = props => (
         <span className="weather__value"> {props.humidity} % </span>
       </p>
     )}
+    {props.wind && (
+      <p className="weather__key">
+        {' '}
+        Szél:
+        <span className="weather__value"> {props.wind} m/s </span>
+      </p>
+    )}
     {props.description && (
       <p className="weather__key">
         {' '}

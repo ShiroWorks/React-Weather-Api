@@ -32,11 +32,37 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+.header-link {
+  cursor: none !important;
+  display: inline-block;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  background: #fff;
+  border-radius: 10px;
+  transition: all 2s ease;
+  animation: fromBottom;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fromBottom {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
 .form-container {
   background-color: #202030;
   height: 100vh;
-  padding-top: 100px;
-  padding-left: 50px;
+  padding-top: 5rem;
+  padding-left: 4rem;
 }
 
 input[type='text'] {
@@ -81,10 +107,11 @@ button:active {
 }
 
 .weather__info {
+  margin-top: 2rem;
   width: 65%;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: 200;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
 }
 
 .weather__key {

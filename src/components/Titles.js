@@ -6,6 +6,9 @@ const Titles = () => (
     <h3 className="title-container__subtitle">
       Tudd meg a hőmérsékletet, körülményeket és többet...
     </h3>
+    <button className="btn header-link">
+      <i className="fas fa-arrow-down" />
+    </button>
   </div>
 );
 

@@ -13,6 +13,7 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    wind: undefined,
     error: undefined
   };
   getWeather = async e => {
@@ -20,7 +21,7 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&lang=hu&appid=${API_KEY}&units=metric`
+      `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&lang=hu&appid=${API_KEY}&units=metric`
     );
     const data = await api_call.json();
     console.log(data);
@@ -32,6 +33,7 @@ class App extends React.Component {
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
+        wind: data.wind.speed,
         error: ''
       });
     } else {
@@ -41,6 +43,7 @@ class App extends React.Component {
         country: undefined,
         humidity: undefined,
         description: undefined,
+        wind: undefined,
         error: 'Please enter the values.'
       });
     }
@@ -49,10 +52,10 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-sm-5 title-container">
+          <div className="col-sm-12 title-container">
             <Titles />
           </div>
-          <div className="col-sm-7 form-container">
+          <div className="col-sm-12 form-container">
             <Form getWeather={this.getWeather} />
             <Weather
               temperature={this.state.temperature}
@@ -60,6 +63,7 @@ class App extends React.Component {
               city={this.state.city}
               country={this.state.country}
               description={this.state.description}
+              wind={this.state.wind}
               error={this.state.error}
             />
           </div>
